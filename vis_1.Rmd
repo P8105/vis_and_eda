@@ -49,10 +49,68 @@ ggp_weather_scatterplot =
   geom_point()
 
 ggp_weather_scatterplot
+```
 
+Check why some rows are missing.
+
+```{r}
+weather_df |> 
+  filter(is.na(tmax))
 ```
 
 
+## Fancier scatterplots!
 
+```{r}
+weather_df |> 
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3, size = .8) + 
+  geom_smooth(se = FALSE)
+```
+
+Where you define aesthetics can matter
+
+
+```{r}
+weather_df |> 
+  ggplot(aes(x = tmin, y = tmax)) + 
+  geom_point(aes(color = name), alpha = .3, size = .8) + 
+  geom_smooth(se = FALSE)
+```
+
+use faceting real quick
+
+```{r}
+weather_df |> 
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3) + 
+  geom_smooth(se = FALSE) +
+  facet_grid(. ~ name)
+```
+
+Let's make a somewhat more interesting scatterplot
+
+```{r}
+weather_df |> 
+  ggplot(aes(x = date, y = tmax, color = name, size = prcp)) + 
+  geom_point(alpha = .3) + 
+  geom_smooth(se = FALSE) +
+  facet_grid(. ~ name)
+```
+
+
+LA plot:
+
+```{r}
+weather_df |> 
+  filter(name == "CentralPark_NY") |> 
+  mutate(
+    tmax_fahr = tmax * (9 / 5) + 32,
+    tmin_fahr = tmin * (9 / 5) + 32
+  ) |> 
+  ggplot(aes(x = tmin_fahr, y = tmax_fahr)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+```
 
 
