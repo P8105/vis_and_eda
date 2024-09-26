@@ -1,5 +1,5 @@
 ---
-title: "Vis I"
+title: "Viz I"
 output: github_document
 ---
 
