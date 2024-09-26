@@ -39,6 +39,12 @@ weather_df =
 
     ## file min/max dates: 1999-09-01 / 2023-09-30
 
+Export data – some folks had trouble accessing.
+
+``` r
+write_csv(weather_df, file = "data/weather_df.csv")
+```
+
 Making our first plot :-)
 
 ``` r
@@ -49,7 +55,7 @@ ggplot(weather_df, aes(x = tmin, y = tmax)) +
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -60,7 +66,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
 ggp_weather_scatterplot = 
@@ -74,7 +80,7 @@ ggp_weather_scatterplot
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Check why some rows are missing.
 
@@ -121,7 +127,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Where you define aesthetics can matter
 
@@ -140,7 +146,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 use faceting real quick
 
@@ -160,7 +166,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 Let’s make a somewhat more interesting scatterplot
 
@@ -202,7 +208,7 @@ weather_df |>
     ## Warning: Removed 19 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 LA plot:
 
@@ -220,7 +226,7 @@ weather_df |>
 
     ## `geom_smooth()` using formula = 'y ~ x'
 
-![](vis_1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ## Small things
 
@@ -239,7 +245,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -250,7 +256,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_binhex()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -261,7 +267,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ## Univariate plots
 
@@ -276,7 +282,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -289,7 +295,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 how would i fix this? maybe facet?
 
@@ -305,7 +311,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_bin()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 maybe a density plot?
 
@@ -318,7 +324,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_density()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -329,7 +335,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_boxplot()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 violin plots
 
@@ -342,7 +348,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_ydensity()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ridge plot
 
@@ -357,7 +363,7 @@ weather_df |>
     ## Warning: Removed 17 rows containing non-finite outside the scale range
     ## (`stat_density_ridges()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 LA univariate plots
 
@@ -370,7 +376,7 @@ weather_df |>
     ## Warning: Removed 15 rows containing non-finite outside the scale range
     ## (`stat_density()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -381,7 +387,7 @@ weather_df |>
     ## Warning: Removed 15 rows containing non-finite outside the scale range
     ## (`stat_boxplot()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-21-2.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-22-2.png)<!-- -->
 
 ``` r
 weather_df |> 
@@ -390,7 +396,7 @@ weather_df |>
   geom_density(alpha = .3)
 ```
 
-![](vis_1_files/figure-gfm/unnamed-chunk-21-3.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-22-3.png)<!-- -->
 
 ## Saving and embedding plots
 
@@ -420,4 +426,4 @@ weather_df |>
     ## Warning: Removed 17 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](vis_1_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](vis_1_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->

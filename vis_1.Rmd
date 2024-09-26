@@ -28,6 +28,13 @@ weather_df =
   select(name, id, everything())
 ```
 
+Export data -- some folks had trouble accessing.
+
+```{r, eval = FALSE}
+write_csv(weather_df, file = "data/weather_df.csv")
+```
+
+
 Making our first plot :-)
 
 ```{r}
